@@ -1,25 +1,27 @@
-import React, {useState} from 'react'
-import Button from '@restart/ui/esm/Button';
-import { Form, FormControl } from 'react-bootstrap';
+import React, { useState } from "react";
 
+const Search = ({ getQuery }) => {
+  const [text, setText] = useState("");
 
-const Search = () => {
-    const [text, setText] = useState('')
+  const onChange = (q) => {
+    setText(q);
+    getQuery(q);
+  };
 
-    return (
-      <section className="Search">
-        <Form className="d-flex">
-          <FormControl
-            type="search"
-            placeholder="Search by Name"
-            className="me-2"
-            value={text}
-            aria-label="Search"
-          />
-          <Button variant="outline-success">Search</Button>
-        </Form>
-      </section>
-    );
-}
+  return (
+    <section className="Search">
+      <form action="">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search by name..."
+          value={text}
+          onChange={(e) => onChange(e.target.value)}
+          autoFocus
+        />
+      </form>
+    </section>
+  );
+};
 
-export default Search
+export default Search;

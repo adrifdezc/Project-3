@@ -27,6 +27,9 @@ function NavbarComp() {
               <Link to="/profile">
                 <Nav.Link href="#profile">Profile</Nav.Link>
               </Link>
+              <Link to="/cocktails">
+                <Nav.Link href="#profile">Cocktails</Nav.Link>
+              </Link>
               <NavDropdown title="More" id="basic-nav-dropdown">
                 <Link to="/cart">
                   <NavDropdown.Item href="#cart">
